@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<h1>Movies Available</h1>
+
+
+    </div>
+      <div><p>
+
+      </p></div>
+      <div>
+    {% for product in products %}
+            <div class="col-md-8">
+        <article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="#">{{ product[0]}}. {{product[1] }}</a>
+      <small class="text-muted">Discount: ${{ product[2] }}</small>
+    </div>
+      <div><p>
+
+      </p></div>
+      <div>
+          <small class="text-muted">Synopsis: {{ product[4] }}</small>
+          <div><p>
+
+          </p></div>
+             <div class="article-metadata">
+             <p class="article-content">Regular price: ${{ product[3] }}</p>
+      <div></div></div>
+      <h4><a class="article-title" href="#"> You Pay ${{ product[3] - product[2]}}</a></h4>
+          <select id="Amount" name="Amount">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+
+        </select>
+          <button>Add</button>
+
+             </div>
+      </div>
+
+            <div class="article-title">
+          <img src={{url_for('static', filename='images/'+ product[5])}}></div></div>
+
+          <div>
+
+          </div>
+
+
+  </div>
+</article></div></div>
+    {% endfor %}
+{% endblock content%}
